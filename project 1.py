@@ -213,7 +213,6 @@ REQUIREMENTS:
 • Display four options for the user to select from.
 Option A Search for an estimate
 Option B Display outstanding payments
-Option C Display total revenue
 Enter Q to quit
 • The user must be able to select an option or enter ‘Q’ to quit the program.
 • All data must be read from the paintingJobs.txt file.
@@ -297,29 +296,6 @@ def optionB():
     list1.close()
         
     
-'''
-
-Option C must calculate the total revenue for jobs that have been accepted and
-fully paid.
-• The calculation must only include jobs with a status of ‘A’.
-• The calculation must only include jobs that have been fully paid.
-• Here is a suggested format for displaying the data.
-Total Revenue
-The company’s total revenue so far is <the total revenue>
-
-'''
-#OPTION C
-def optionC():
-    count = 0
-    myfile = open("paintingjobs.txt", "r")
-    for record in myfile:
-        values = record.split(",")
-        #if values[4] == "A":
-            
-    myfile.close()
-
-
-
 #OPTION Q   
 def optionQ():
     print("Have a good day! ")
@@ -335,10 +311,6 @@ while authenticate == "false":
         break
     if start_option == "B" or start_option == "b" :
         optionB()
-        authenticate = "true"
-        break
-    if start_option == "C" or start_option == "c":
-        optionC()
         authenticate = "true"
         break
     if start_option == "Q" or start_option == "q":
